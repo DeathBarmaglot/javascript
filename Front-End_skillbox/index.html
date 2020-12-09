@@ -1,0 +1,130 @@
+	
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasya Design</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$('button').on('click', function(){
+			$('.popup-container').css('display', 'flex');
+		});
+
+		$('.close-icon').on('click', function(){
+			$('.popup-container').css('display', 'none');
+		})
+	});
+	</script>
+
+    <header>
+<div class="popup-container">
+		<div class="popup">
+			<a href="#" class="close-icon"></a>
+			<h3>Отправка заявки</h3>
+			<div class="popup-fields">
+				<input type="text" placeholder="Ваше имя">
+			</div>
+			<button></button>
+		</div>
+	</div>
+    	
+        <div class="top-nav-menu container">
+            <nav>
+                <ul>
+                    <li><a href="#service">Услуги</a></li>
+                    <li><a href="#portfolio">Портфолио</a></li>
+                    <li><a href="#price">Стоимость</a></li>
+                </ul>
+            </nav>
+            <div class="callback">
+                <a href="tel:66666666666" class="callback__phone">099 999 0 666</a>
+                <a href="" class="callback__ordercall button">Заказать звонок</a>
+            </div>
+        </div>
+    </header>
+    <section class="main-display container">
+        <div class="main-display__info">
+            <h1 class="main-display__title">Pasha Barmaglot</h1>
+            <span class="subtitle main-display__subtitle">Frontend-разработчик и веб-верстальщик</span>
+            <a href="" class="button main-display__button">Узнать больше</a>
+        </div>
+        <div class="main-display__bg"></div>
+    </section>
+    <section id="service" class="services container">
+        <h2 class="title services__title">
+            Что я тут делаю 
+        </h2>
+        <div class="services__row">
+            <a href="" class="services__column"><img src="1.png" alt=""><span>Верстка лендинг-страниц и сайтов любой сложности</span></a>
+            <a href="" class="services__column"><img src="2.png" alt=""><span>Адаптивная верстка под все браузеры и устройства</span></a>
+            <a href="" class="services__column"><img src="3.png" alt=""><span>Frontent-разработка и программирование</span></a>
+            <a href="" class="services__column"><img src="4.png" alt=""><span>Исправление и доработка существующей верстки</span></a>
+        </div>
+        <a href="" class="button services__button">Узнать стоимость</a>
+    </section>
+    <section id="portfolio" class="portfolio container">
+        <h2 class="title portfolio__title">
+            Примеры работ
+        </h2>
+        <div class="portfolio__row">
+            <a href="" class="portfolio__column">
+                <div class="portfolio__img"><img src="w1.png" alt=""></div>
+                <span>Сайт психолога Веры Антоновой</span>
+            </a>
+            <a href="" class="portfolio__column">
+                <div class="portfolio__img"><img src="w2.png" alt=""></div>
+                <span>Сайт магазин детской одежды</span>
+            </a>
+            <a href="" class="portfolio__column">
+                <div class="portfolio__img"><img src="w3.png" alt=""></div>
+                <span>Сайт магазина "Рыболов"</span>
+            </a>
+        </div>
+        <a href="" class="button portfolio__button">Закзать проект</a>
+    </section>
+    <section id="price" class="price">
+        <div class="container">
+            <div class="price__info">
+                <h2 class="title price__title">
+                    Адаптивная верстка под все браузеры от 1000 &#8381; всего за 4 часа.*
+                </h2>
+                <span class="price__descr">*Срок и стоимость могут отличаться от заявленных и рассчитываться индивидуально, в зависимость от поставленных задач</span>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__inside container">
+            <nav class="footer__column">
+                <ul>
+                    <li><a href="#service">Услуги</a></li>
+                    <li><a href="#portfolio">Портфолио</a></li>
+                    <li><a href="#price">Стоимость</a></li>
+                </ul>
+            </nav>
+            <div class="footer__column">
+                <ul>
+                    <li><a href="mail:maxburtsev.work@gmail.com">fghjkl11@gmail.com</a></li>
+                    <a href="tel:66666666666" class="callback__phone">099 999 0 666 </a>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <a href="" class="callback__ordercall button">Заказать звонок</a>
+                <div class="footer__social">
+                    <a href=""><img src="fb.png" alt=""></a>
+                    <a href=""><img src="vk.png" alt=""></a>
+                    <a href=""><img src="you.png" alt=""></a>
+                    <a href=""><img src="telegram.png" alt=""></a>
+                    <a href=""><img src="inst.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- <script src="js/index.js"></script> -->
+</body>
+</html>

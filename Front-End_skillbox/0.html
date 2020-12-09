@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<body id="wrap">
+
+ 	 	<div id="slide">
+
+		<img src="0.png" class="slide-single">
+		<img src="1.png" class="slide-single">
+		<img src="2.png" class="slide-single">
+		<img src="3.png" class="slide-single">
+		<img src="4.png" class="slide-single">
+		<img src="5.png" class="slide-single">
+		<img src="6.png" class="slide-single">
+	
+	
+		
+	</div>
+
+ 	
+<div id="l"><img src="8.png"></div>			
+</body>
+</head>
+
+
+<style type="text/css">
+
+@keyframes ani {
+0% {left: 0;
+    	top: 30%;
+    	opacity: 1;
+    }
+17%	{left: 75%;
+    	top: 70%;
+    }
+34% {left: 0%;
+        top: 0;
+    }
+51%	{
+		left: 75%;
+   	top: 30%;
+   	}
+68% {
+        left: 0;
+        top: 70%;
+    }
+85% {
+                left: 75%;
+        top: 0%;
+    }
+100% {
+        opacity: 1;
+        left: 0;
+        top: 30%;
+    }        
+    }
+
+
+body {
+	//background: black;
+	//justify-content: center;
+}
+
+#wrap {
+	width: auto;
+	height: auto;
+	background: #000;
+	}
+
+	#l {
+		top: 0;
+		left: 730px;
+		width: 100px;
+		height: 65px;
+		position: absolute;
+		cursor: pointer;
+	}
+	#slide {
+		left: 600px;
+		top: 0px;
+		width: 300px;
+		height: 180px;
+		margin: 0;
+		border-color: 1px solid white;	
+		//display: block;
+		position: absolute;
+		cursor: pointer;
+//		background: white;
+		border-radius: 3%;
+		transition: all linear .5s;
+		overflow: hidden;
+		//animation: ani 15s ease-in-out infinite;
+			}
+	.slide-single{
+		width: 300px;
+		height: 180px;
+		position: absolute;
+		transition: all ease-in-out .5s;
+		border-radius: 3%;
+	}			
+#slide:active {
+//opacity: 0;
+//filter: blur(1px);
+transform: scale(.5) rotateZ(-360deg);
+}
+
+//#slide:hover {
+//opacity: 0.8;
+//transform: scale(.5);
+//}
+
+</style>
+</body>
+
+<script type="text/javascript">
+	let slides = document.querySelectorAll('.slide-single');
+	let slider = [];
+	for (let i = 0; i< slides.length; i++) {
+		slider[i] = slides[i].src;
+		slides[i].remove();
+		}
+	
+	let step = 0;
+	let offset = 0;
+
+function draw() {
+	let img = document.createElement('img');
+	img.src = slider[step];
+	img.classList.add('slide-single');
+	img.style.left = offset*512 + 'px';
+	document.querySelector('#slide').appendChild(img);
+	if (step +1 == slider.length){
+		step = 0;
+		}
+		else {
+			step++;
+		}
+		offset = 1;
+	}
+function left() {
+	document.onclick = null;
+	let slides2 = document.querySelectorAll('.slide-single');
+	let offset2 = 0;
+for (var i = 0; i < slides2.length; i++) {
+	slides2[i].style.left = offset2*128 - 128 +'px';
+	offset2++;
+}
+
+setTimeout(function () {
+	slides2[0].remove();
+	draw();
+	document.onclick = left;
+}, 500);
+}
+
+draw();
+draw();
+document.onclick = left;
+
+
+var theThing = document.querySelector("#slide");
+var container = document.querySelector("#wrap");
+container.addEventListener('mousemove', function(event) {
+    var xPosition = event.clientX - container.getBoundingClientRect().left - (theThing.clientWidth / 2);
+    var yPosition = event.clientY - container.getBoundingClientRect().top - (theThing.clientHeight / 2);
+    theThing.style.left = xPosition +  "px";
+    theThing.style.top = yPosition + "px";   
+}
+);
+
+var vxd = document.getElementById("l"); 
+vxd.onclick = function()
+{
+	document.location.href = "http://discovery.cv.ua";}
+	
+
+window.oncontextmenu = function ()
+{
+        return false;     // cancel default menu
+}
+
+</script>

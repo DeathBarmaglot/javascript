@@ -1,0 +1,54 @@
+body {
+	background: #ccc;
+	}
+.pi: hover {
+	
+}
+
+#slide {
+	width: 250px;
+	height: 200px;
+	margin: 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.single-slide{
+	opacity: 100%;
+	width: 512px;
+	height: 512px;
+	position: relative;
+	transition: all ease 1s;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+
+#slide:hover {
+	cursor: progress;
+  animation: rotate 5s ease-out infinite;}
+
+	 
+	 
+}
+img {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  position: relative;
+}
+
+@keyframes rotate {
+0%{
+  	
+  	opacity: 100%;}
+
+50%{transform: rotateZ(-180deg);
+	
+  	opacity: 0%;}
+100% {
+  	
+    transform: rotateZ(0deg);
+    opacity: 100%;}}

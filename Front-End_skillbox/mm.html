@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Михаил Медведев — официальный сайт</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<style type="text/css">
+	html, body {
+		padding: 0;
+		margin: 0;
+	}
+	body {
+		font-family: Roboto;
+	}
+	header, section, footer {
+		padding-left: 100px;
+		padding-right: 100px;
+	}
+	section {
+		margin-bottom: 30px;
+	}
+	header {
+		height: 100px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	nav a {
+		font-size: 20px;
+		margin-right: 20px;
+		color: black;
+		text-decoration: none;
+	}
+	nav a:hover {
+		border-bottom: 1px solid black;
+	}
+	.header-nav {
+		flex-direction: row;
+	}
+	.phone {
+		margin-right: 20px;
+		font-size: 20px;
+		text-decoration: none;
+		color: black;
+	}
+	.light-button {
+		border: 1px solid #000000;
+		box-sizing: border-box;
+		border-radius: 10px;
+		background-color: white;
+		padding: 12px 30px;
+		cursor: pointer;
+		outline: none;
+	}
+	.phone-container {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	.services {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 30px;
+	}
+	.service-item {
+		width: 250px;
+		display: flex;
+		flex-direction: column;
+	}
+	.service-item img {
+		width: 175px;
+		margin-bottom: 20px;
+	}
+	.price {
+		background-color: #3635f5;
+		padding-top: 100px;
+		padding-bottom: 80px;
+	}
+	.price-main {
+		width: 535px;
+		font-size: 40px;
+		color: white;
+	}
+	.footer-nav {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	footer {
+		padding-top: 50px;
+		padding-bottom: 50px;
+		display: flex;
+		justify-content: space-between;
+
+	}
+	.popup-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: none;
+		/*display: flex;*/
+		justify-content: center;
+		align-items: center;
+		background-color: #3635f55c;
+		z-index: 100;
+	}
+	.popup-fields {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.popup-fields input {
+		margin-bottom: 10px;
+	}
+	.close-icon {
+		float: right;
+		width: 20px;
+		height: 20px;
+		background-image: url('/img/close.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;s
+	}
+	.popup {
+		min-width: 200px;
+		background-color: white;
+		border-radius: 5px;
+		padding: 10px;
+	}
+	#send-button {
+
+	}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$('button').on('click', function(){
+			$('.popup-container').css('display', 'flex');
+		});
+
+		$('.close-icon').on('click', function(){
+			$('.popup-container').css('display', 'none');
+		})
+
+		$('#send-button').on('click', function(){
+			let data = {
+				'name': $('#name').val(),
+				'email': $('#email').val()
+			};
+			$.post('/api.php', data, function(response){
+				alert('YES')
+			});
+		});
+	});
+	</script>
+</head>
+<body>
+	<header>
+		<nav class="header-nav">
+			<a href="#">Услуги</a>
+			<a href="#">Портфолио</a>
+			<a href="#">Стоимость</a>
+		</nav>
+		<div class="phone-container">
+			<a class="phone" href="#">+7 900 968-69-45</a>
+			<button class="light-button">Заказать звонок</button>
+		</div>
+	</header>
+	<section>
+		<h2>Что я делаю</h2>
+		<div class="services">
+			<div class="service-item">
+				<img src="/img/1.png">
+				Вёрстка лендинг-страниц и сайтов любой сложности
+			</div>
+			<div class="service-item">
+				<img src="/img/2.png">
+				Адаптивная вёрстка под  все браузеры и устройства
+			</div>
+			<div class="service-item">
+				<img src="/img/3.png">
+				Frontend–разработка и программирование
+			</div>
+			<div class="service-item">
+				<img src="/img/4.png">
+				Исправление и доработка существующей вёрстки
+			</div>
+		</div>
+		<button class="light-button">Узнать стоимость</button>
+	</section>
+	<section class="price">
+		<h2 class="price-main">Адаптивная вёрстка под все  устройства и браузеры  от 1000 ₽ всего за 4 часа.*</h2>
+		<small></small>
+	</section>
+	<footer>
+		<nav class="footer-nav">
+			<a href="#">Услуги</a>
+			<a href="#">Портфолио</a>
+			<a href="#">Стоимость</a>
+		</nav>
+		<div>
+			<a href="#">mail@mail.ru</a>
+			<a href="#">+7 903 968-69-45</a>
+		</div>
+		<div>
+			<button class="light-button">Заказать звонок</button>
+			<div class="social-icons">++++++</div>
+		</div>
+	</section>
+	<div class="popup-container">
+		<div class="popup">
+			<a href="#" class="close-icon"></a>
+			<h3>Отправка заявки</h3>
+			<form class="popup-fields">
+				<input type="text" name="name" id="name" placeholder="Ваше имя">
+				<input type="email" name="email" id="email" placeholder="Ваш e-mail">
+			</form>
+			<button id="send-button" class="light-button">Отправить</button>
+		</div>
+	</div>
+</body>
+</html>
